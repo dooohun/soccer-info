@@ -38,11 +38,14 @@ const Timeline = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   position: relative;
+  place-items: center start;
 
-  &::after{
-    content: '';
-    position: absolute;
-    width: 25px;
+  &:nth-child(odd) {
+    place-items: center end;
+  }
+
+  &:nth-child(even) {
+    place-items: center start;
   }
 `
 
@@ -50,8 +53,7 @@ const GameScheduleItem = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 330px;
-  margin: 5px 20px;
+  width: 85.5%;
   padding: 10px;
   border: solid 1px #F1F1F4;
   border-radius: 10px;
@@ -63,8 +65,8 @@ const GameScheduleItem = styled.div`
     position: absolute;
     width: 20px;
     height: 20px;
-    right: ${ props => (props.$isleft === "true" ? "-10%" : "unset")};
-    left: ${props => (props.$isleft === "true" ? "unset" : "-9.8%")};
+    right: ${ props => (props.$isleft === "true" ? "-14.5%" : "unset")};
+    left: ${props => (props.$isleft === "true" ? "unset" : "-14.5%")};
     background-color: ${props => (props.$isleft === "true" ? "#F44335" : "#414141")};
     border: 4px solid white;
     top: 35%;
@@ -86,8 +88,7 @@ const HomeTeam = styled.div`
   align-items: center;
   justify-content: center;
   margin: 5px 7px;
-  max-width: 180px;
-  width: 100%;
+  width: 90%;
 `
 
 const AwayTeam = styled.div`
@@ -96,8 +97,7 @@ const AwayTeam = styled.div`
   align-items: center;
   justify-content: center;
   margin: 5px 7px;
-  max-width: 180px;
-  width: 100%;
+  width: 90%;
 `
 
 const TeamName = styled.div`
@@ -137,7 +137,6 @@ export default function GameSchedule() {
                   <DateText $isleft="true">
                     {(game.fixture.date).slice(0, 10)}
                   </DateText>
-                  <div>
                     <GameScheduleItem
                       key={idx}
                       $isleft="false"
@@ -151,13 +150,11 @@ export default function GameSchedule() {
                         <TeamName>{game.teams.away.name}</TeamName>
                       </AwayTeam>
                     </GameScheduleItem>
-                  </div>
                 </Timeline>
               );
             } else {
               return (
                 <Timeline key={idx}>
-                  <div>
                     <GameScheduleItem
                       key={idx}
                       $isleft="true"
@@ -171,7 +168,6 @@ export default function GameSchedule() {
                         <TeamName>{game.teams.away.name}</TeamName>
                       </AwayTeam>
                     </GameScheduleItem>
-                  </div>
                   <DateText $isleft="false">
                     {(game.fixture.date).slice(0, 10)}
                   </DateText>

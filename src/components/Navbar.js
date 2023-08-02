@@ -49,7 +49,7 @@ export default function Navbar() {
   return (
     <MainHeader>
       <LogoBox>
-        <MainLogo to="/">ProFive</MainLogo>
+        <MainLogo to={process.env.PUBLIC_URL + "/"}>ProFive</MainLogo>
       </LogoBox>
       <NavHeader>
         <MainTitle>Welcome To ProFive</MainTitle>

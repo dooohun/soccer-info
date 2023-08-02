@@ -1,6 +1,13 @@
 import { useDispatch } from "react-redux";
 import { getLeagueId } from "../stores/soccerSlice";
 import styled from "styled-components";
+import league1 from "../static/image/premierleague.png"
+import league2 from "../static/image/bundesliga.png"
+import league3 from "../static/image/laliga.png"
+import league4 from "../static/image/ligue1.png"
+import league5 from "../static/image/seriea.png"
+
+
 
 const LogoContainer = styled.div`
   display: flex;
@@ -42,11 +49,11 @@ export default function Leagues() {
   return (
     <LogoContainer>
       <LogoImageSection>
-        <LeagueLogoImage src="/images/premierleague-logo.png" alt="PremierLeague" onClick={() => onClick("PremierLeague")} />
-        <LeagueLogoImage src="/images/bundesliga-logo.png" alt="Bundesliga" onClick={() => onClick("Bundesliga")} />
-        <LeagueLogoImage src="/images/laliga-logo.png" alt="LaLiga" onClick={() => onClick("LaLiga")} />
-        <LeagueLogoImage src="/images/ligue1-logo.png" alt="Ligue1" onClick={() => onClick("Ligue1")} />
-        <LeagueLogoImage src="/images/seriea-logo.png" alt="SerieA" onClick={() => onClick("SerieA")} />
+        <LeagueLogoImage src={league1} alt="PremierLeague" onClick={() => onClick("PremierLeague")} />
+        <LeagueLogoImage src={league2} alt="Bundesliga" onClick={() => onClick("Bundesliga")} />
+        <LeagueLogoImage src={league3} alt="LaLiga" onClick={() => onClick("LaLiga")} />
+        <LeagueLogoImage src={league4} alt="Ligue1" onClick={() => onClick("Ligue1")} />
+        <LeagueLogoImage src={league5} alt="SerieA" onClick={() => onClick("SerieA")} />
       </LogoImageSection>
     </LogoContainer>
   )
