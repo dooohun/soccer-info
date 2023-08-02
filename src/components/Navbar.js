@@ -1,6 +1,5 @@
 import { styled } from "styled-components"
 import { Link } from "react-router-dom"
-import Switch from '@mui/material/Switch';
 
 const MainHeader = styled.header`
   height: 72px;
@@ -54,7 +53,6 @@ export default function Navbar() {
       </LogoBox>
       <NavHeader>
         <MainTitle>Welcome To ProFive</MainTitle>
-        <Switch />
       </NavHeader>
     </MainHeader>
   )

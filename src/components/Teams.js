@@ -29,7 +29,7 @@ const TeamLogoImage = styled.img`
   height: 90px;
   margin: 15px 0px;
   cursor: pointer;
-  filter: ${props => props.isselected === "true" ? "brightness(100%)" : "brightness(40%)"};
+  filter: ${props => props.$isselected === "true" ? "brightness(100%)" : "brightness(40%)"};
   transition: filter 0.3s ease-in-out;
 
   &:hover {
@@ -82,7 +82,7 @@ export default function Teams() {
             <TeamLogoImage
               src={arr.team.logo}
               onClick={() => handleImageClick(arr.team.id, arr.team.logo, arr.team.name)}
-              isselected={selectedImage === arr.team.logo ? "true" : "false"}
+              $isselected={selectedImage === arr.team.logo ? "true" : "false"}
             />
           </div>
         )

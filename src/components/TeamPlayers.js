@@ -53,7 +53,7 @@ const TableRow = styled.tr`
 
 const TableData = styled.td`
   padding: 8px;
-  text-align: ${props => props.isplayercell === "true" ? "start" : "center"};
+  text-align: ${props => props.$isplayercell === "true" ? "start" : "center"};
 `
 
 const PlayerImage = styled.img`
@@ -89,7 +89,7 @@ export default function TeamPlayers() {
         <tbody>
           {data.response[0].players.map((player) => (
             <TableRow key={player.id}>
-              <TableData isplayercell="true"><PlayerImage src={player.photo} />{player.name}</TableData>
+              <TableData $isplayercell="true"><PlayerImage src={player.photo} />{player.name}</TableData>
               <TableData>{player.age}</TableData>
               <TableData>{player.position}</TableData>
               <TableData>{player.number}</TableData>

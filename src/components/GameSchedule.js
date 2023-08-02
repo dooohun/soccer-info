@@ -63,9 +63,9 @@ const GameScheduleItem = styled.div`
     position: absolute;
     width: 20px;
     height: 20px;
-    right: ${ props => (props.isleft === "true" ? "-10%" : "unset")};
-    left: ${props => (props.isleft === "true" ? "unset" : "-9.8%")};
-    background-color: ${props => (props.isleft === "true" ? "#F44335" : "#414141")};
+    right: ${ props => (props.$isleft === "true" ? "-10%" : "unset")};
+    left: ${props => (props.$isleft === "true" ? "unset" : "-9.8%")};
+    background-color: ${props => (props.$isleft === "true" ? "#F44335" : "#414141")};
     border: 4px solid white;
     top: 35%;
     border-radius: 50%;
@@ -75,7 +75,7 @@ const GameScheduleItem = styled.div`
 
 const DateText = styled.div`
   display: flex;
-  justify-content: ${props => (props.isleft === "true" ? "flex-end" : "flex-start")};
+  justify-content: ${props => (props.$isleft === "true" ? "flex-end" : "flex-start")};
   align-items: center;
   margin: 0 30px;
 `
@@ -134,13 +134,13 @@ export default function GameSchedule() {
             if (idx % 2 === 0) {
               return (
                 <Timeline key={idx}>
-                  <DateText isleft="true">
+                  <DateText $isleft="true">
                     {(game.fixture.date).slice(0, 10)}
                   </DateText>
                   <div>
                     <GameScheduleItem
                       key={idx}
-                      isleft="false"
+                      $isleft="false"
                     >
                       <HomeTeam>
                         <TeamLogoImage alt={game.teams.home.name} src={game.teams.home.logo} />
@@ -160,7 +160,7 @@ export default function GameSchedule() {
                   <div>
                     <GameScheduleItem
                       key={idx}
-                      isleft="true"
+                      $isleft="true"
                     >
                       <HomeTeam>
                         <TeamLogoImage alt={game.teams.home.name} src={game.teams.home.logo} />
@@ -172,7 +172,7 @@ export default function GameSchedule() {
                       </AwayTeam>
                     </GameScheduleItem>
                   </div>
-                  <DateText isleft="false">
+                  <DateText $isleft="false">
                     {(game.fixture.date).slice(0, 10)}
                   </DateText>
                 </Timeline>

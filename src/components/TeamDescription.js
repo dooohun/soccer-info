@@ -29,6 +29,26 @@ const TeamLogo = styled.div`
   
 `
 
+const VenuePhoto = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 450px;
+  width: 600px;
+
+  @media (max-width: 768px) {
+    /* 화면 너비가 768px 이하일 때 */
+    height: 300px;
+    width: 400px;
+  }
+
+  @media (max-width: 480px) {
+    /* 화면 너비가 480px 이하일 때 */
+    height: 200px;
+    width: 300px;
+  }
+`
+
 export default function TeamDescription() {
   const selectedTeamId = useSelector((state) => state.soccerInfo.teamId);
 
@@ -63,7 +83,9 @@ export default function TeamDescription() {
           <br />
           <b>Stadium Name</b>: {venueData.name}
           <br />
-          <img alt={venueData.name} src={venueData.image} />
+          <VenuePhoto>
+            <img alt={venueData.name} src={venueData.image} />
+          </VenuePhoto>
         </div>
       </div>
     </DescriptionContainer>

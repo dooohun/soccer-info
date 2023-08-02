@@ -45,7 +45,7 @@ const HomeProgressBar = styled.div`
 `
 
 const HomeProgress = styled.div`
-  width: ${props => props.rate};
+  width: ${(props) => props.$rate};
   height: 17px;
   background-color: #5FF249;
 `
@@ -56,7 +56,7 @@ const AwayProgressBar = styled.div`
 `
 
 const AwayProgress = styled.div`
-  width: ${props => props.rate};
+  width: ${(props) => props.$rate};
   height: 17px;
   background-color: #3D79F2;
 `
@@ -106,10 +106,10 @@ export default function Prediction() {
             {homeRate}%
           </RateBox>
           <HomeProgressBar>
-            <HomeProgress rate={home} />
+            <HomeProgress $rate={home} />
           </HomeProgressBar>
           <AwayProgressBar>
-            <AwayProgress rate={away} />
+            <AwayProgress $rate={away} />
           </AwayProgressBar>
           <RateBox>
             {awayRate}%
