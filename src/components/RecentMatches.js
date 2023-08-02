@@ -85,7 +85,7 @@ export default function RecentMatches() {
   const selectedLeagueId = useSelector((state) => state.soccerInfo.leagueId);
 
   const [matches, setMatches] = useState([]);
-  const { data } = useGetRecentMatchesQuery(selectedLeagueId);
+  const { data, isLoading, error } = useGetRecentMatchesQuery(selectedLeagueId);
 
   const dispatch = useDispatch();
 
@@ -115,7 +115,20 @@ export default function RecentMatches() {
     dispatch(getFixtureId({ fixtureId: selectedFixtureId }));
     console.log(selectedFixtureId);
   }
-  
+
+  if (isLoading) {
+    return <div></div>;
+  }
+
+  if (error) {
+    // 에러 발생 시 처리
+    return <div>Error occurred</div>;
+  }
+
+  if (!data) {
+    // 데이터가 없는 경우 처리
+    return <div>No data available</div>;
+  }
   return (
     <RecentMatchesContainer>
       <MainTitle>Next Matches</MainTitle>

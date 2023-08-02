@@ -12,11 +12,21 @@ const DescriptionContainer = styled.div`
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 15px 10px;
 `
+const DescriptionHeader = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`
 
 const TeamName = styled.div`
-  font-family: "Poppins-Bold";
+  font-family: "Poppins-ExtraBold";
   font-size: 20px;
   text-align: center;
+`
+
+const TeamLogo = styled.div`
+  
 `
 
 export default function TeamDescription() {
@@ -38,14 +48,14 @@ export default function TeamDescription() {
   return (
     <DescriptionContainer>
       <div>
-        <div>
+        <DescriptionHeader>
           <TeamName>
-            <img alt={teamData.name} src={teamData.logo} />
             {teamData.name}
           </TeamName>
-          <br />
-
-        </div>
+          <TeamLogo>
+            <img alt={teamData.name} src={teamData.logo} />
+          </TeamLogo>  
+        </DescriptionHeader>
         <div>
           <b>City</b>: {venueData.city}
           <br />

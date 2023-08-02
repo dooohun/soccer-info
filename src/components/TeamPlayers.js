@@ -21,6 +21,10 @@ const TeamPlayersContainer = styled.div`
   }
 `
 
+const MainTitle = styled.h2`
+  margin: 0 0 15px 0;
+`
+
 const Table = styled.table`
   border-collapse: collapse;
   background-color: #FFFFFF;
@@ -70,10 +74,9 @@ export default function TeamPlayers() {
     return <div>No data available</div>;
   }
 
-
   return (
     <TeamPlayersContainer>
-      <h2>Players</h2>
+      <MainTitle>Players</MainTitle>
       <Table>
         <TableHead>
           <TableRow>
