@@ -1,17 +1,22 @@
 {
   "files": {
     "main.css": "/soccer-info/static/css/main.11150f74.css",
-    "main.js": "/soccer-info/static/js/main.35a6e9d9.js",
+    "main.js": "/soccer-info/static/js/main.b942d410.js",
     "static/media/Poppins-Regular.ttf": "/soccer-info/static/media/Poppins-Regular.35d26b781dc5fda684cc.ttf",
     "static/media/Poppins-Medium.ttf": "/soccer-info/static/media/Poppins-Medium.673ed42382ab264e0bf5.ttf",
     "static/media/Poppins-Bold.ttf": "/soccer-info/static/media/Poppins-Bold.cdb29a5d7ccf57ff05a3.ttf",
     "static/media/Poppins-ExtraBold.ttf": "/soccer-info/static/media/Poppins-ExtraBold.01849ee091e1762a5dd5.ttf",
+    "static/media/premierleague.png": "/soccer-info/static/media/premierleague.819106b056b4582ff847.png",
+    "static/media/laliga.png": "/soccer-info/static/media/laliga.afe6bdcf199addfe4ec2.png",
+    "static/media/ligue1.png": "/soccer-info/static/media/ligue1.ebc1882d860716498c43.png",
+    "static/media/bundesliga.png": "/soccer-info/static/media/bundesliga.849da59133a5ca402804.png",
+    "static/media/seriea.png": "/soccer-info/static/media/seriea.93b8c3f8bb845d164b5b.png",
     "index.html": "/soccer-info/index.html",
     "main.11150f74.css.map": "/soccer-info/static/css/main.11150f74.css.map",
-    "main.35a6e9d9.js.map": "/soccer-info/static/js/main.35a6e9d9.js.map"
+    "main.b942d410.js.map": "/soccer-info/static/js/main.b942d410.js.map"
   },
   "entrypoints": [
     "static/css/main.11150f74.css",
-    "static/js/main.35a6e9d9.js"
+    "static/js/main.b942d410.js"
   ]
 }
