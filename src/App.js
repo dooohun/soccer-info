@@ -11,8 +11,8 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Main />} />
-        <Route path="/teamInfo/:teamName" element={<TeamInfo />} />
+        <Route exact path={process.env.PUBLIC_URL + "/"} element={<Main />} />
+        <Route path={process.env.PUBLIC_URL + "/teamInfo/:teamName"} element={<TeamInfo />} />
       </Routes>
     </BrowserRouter>
   );
