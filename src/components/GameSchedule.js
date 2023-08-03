@@ -21,6 +21,7 @@ const GameScheduleContainer = styled.div`
 `
 const GameSchedules = styled.div`
   position: relative;
+  width: 80%;
 
   &::after{
     content: "";
@@ -38,7 +39,7 @@ const Timeline = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   position: relative;
-  place-items: center start;
+  width: 100%;
 
   &:nth-child(odd) {
     place-items: center end;
@@ -48,16 +49,11 @@ const Timeline = styled.div`
     place-items: center start;
   }
 `
-
-const GameScheduleItem = styled.div`
+const BackgroundBox = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 85.5%;
-  padding: 10px;
-  border: solid 1px #F1F1F4;
-  border-radius: 10px;
-  background-color: #F1F1F4;
+  width: 100%;
   position: relative;
 
   &::after{
@@ -65,14 +61,25 @@ const GameScheduleItem = styled.div`
     position: absolute;
     width: 20px;
     height: 20px;
-    right: ${ props => (props.$isleft === "true" ? "-14.5%" : "unset")};
-    left: ${props => (props.$isleft === "true" ? "unset" : "-14.5%")};
+    right: ${ props => (props.$isleft === "true" ? "-14px" : "unset")};
+    left: ${props => (props.$isleft === "true" ? "unset" : "-14px")};
     background-color: ${props => (props.$isleft === "true" ? "#F44335" : "#414141")};
     border: 4px solid white;
     top: 35%;
     border-radius: 50%;
     z-index: 1;
   }
+`
+const GameScheduleItem = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  padding: 10px;
+  border: solid 1px #F1F1F4;
+  border-radius: 10px;
+  background-color: #F1F1F4;
+  position: relative;
 `
 
 const DateText = styled.div`
@@ -137,10 +144,8 @@ export default function GameSchedule() {
                   <DateText $isleft="true">
                     {(game.fixture.date).slice(0, 10)}
                   </DateText>
-                    <GameScheduleItem
-                      key={idx}
-                      $isleft="false"
-                    >
+                  <BackgroundBox $isleft="false">
+                    <GameScheduleItem>
                       <HomeTeam>
                         <TeamLogoImage alt={game.teams.home.name} src={game.teams.home.logo} />
                         <TeamName>{game.teams.home.name}</TeamName>
@@ -150,15 +155,14 @@ export default function GameSchedule() {
                         <TeamName>{game.teams.away.name}</TeamName>
                       </AwayTeam>
                     </GameScheduleItem>
+                  </BackgroundBox>
                 </Timeline>
               );
             } else {
               return (
                 <Timeline key={idx}>
-                    <GameScheduleItem
-                      key={idx}
-                      $isleft="true"
-                    >
+                  <BackgroundBox $isleft="true">
+                    <GameScheduleItem>
                       <HomeTeam>
                         <TeamLogoImage alt={game.teams.home.name} src={game.teams.home.logo} />
                         <TeamName>{game.teams.home.name}</TeamName>
@@ -168,6 +172,7 @@ export default function GameSchedule() {
                         <TeamName>{game.teams.away.name}</TeamName>
                       </AwayTeam>
                     </GameScheduleItem>
+                  </BackgroundBox>
                   <DateText $isleft="false">
                     {(game.fixture.date).slice(0, 10)}
                   </DateText>

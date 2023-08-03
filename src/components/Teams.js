@@ -12,7 +12,6 @@ const TeamsLogoContainer = styled.div`
   align-items: center;
   position: sticky;
   background-color: #FFFFFF;
-  max-width: 140px;
   width: 100%;
   height: calc(100vh - 72px);
   overflow-y: scroll;

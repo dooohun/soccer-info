@@ -7,8 +7,6 @@ import league3 from "../static/image/laliga.png"
 import league4 from "../static/image/ligue1.png"
 import league5 from "../static/image/seriea.png"
 
-
-
 const LogoContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -17,10 +15,9 @@ const LogoContainer = styled.div`
   position: sticky;
   height: calc(100vh - 72px);
   background-color: #FFFFFF;
-  border-right: 1px solid #ebedf3;
+  border-right: 2px solid #ebedf3;
   overflow-y: hidden;
-  max-width: 91px;
-  width: 100%;
+  width: calc(100% - 2px);
 `
 
 const LogoImageSection = styled.div`

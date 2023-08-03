@@ -2,13 +2,12 @@ import { styled } from "styled-components"
 import { Link } from "react-router-dom"
 
 const MainHeader = styled.header`
-  height: 72px;
-  background-color: #F2F2F2;
-  padding: 0 24px 0 0;
-  text-align: center;
+  display: grid;
+  grid-template-columns: 3fr 17fr;
   position: sticky;
-  display: flex;
-  align-items: center;
+  text-align: center;
+  background-color: #F2F2F2;
+  height: 72px;
 `
 
 const NavHeader = styled.div`
@@ -23,10 +22,10 @@ const LogoBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 15.25%;
-  height: calc(100% - 1px);
+  width: 100%;
+  height: calc(100% - 2px);
   background-color: #FFFFFF;
-  border-bottom: 1px solid #ebedf3;
+  border-bottom: 2px solid #ebedf3;
 `
 
 const MainLogo = styled(Link)`
@@ -34,6 +33,7 @@ const MainLogo = styled(Link)`
   font-family: "Poppins-Bold";
   text-decoration: none;
   color:  #1976D2;
+  margin-left: 5px;
 `
 
 const MainTitle = styled.h2`
