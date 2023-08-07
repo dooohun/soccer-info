@@ -35,18 +35,6 @@ const VenuePhoto = styled.div`
   justify-content: center;
   height: 450px;
   width: 600px;
-
-  @media (max-width: 768px) {
-    /* 화면 너비가 768px 이하일 때 */
-    height: 300px;
-    width: 400px;
-  }
-
-  @media (max-width: 480px) {
-    /* 화면 너비가 480px 이하일 때 */
-    height: 200px;
-    width: 300px;
-  }
 `
 
 export default function TeamDescription() {

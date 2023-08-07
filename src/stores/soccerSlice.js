@@ -14,6 +14,7 @@ const initialState = {
   teamId: 50,
   season: 2022,
   fixtureId: 1035037,
+  playerId: null,
   selectedTeam: null,
 };
 
@@ -34,9 +35,12 @@ const soccerSlice = createSlice({
     getTeamInfo: (state, action) => {
       state.teamId = action.payload.teamId;
       state.selectedTeam = action.payload.selectedTeam
+    },
+    getPlayerId: (state, action) => {
+      state.playerId = action.payload.playerId
     }
   }
 })
 
 export default soccerSlice;
-export const { getLeagueId, getSeason, getFixtureId, getTeamInfo } = soccerSlice.actions;
+export const { getLeagueId, getSeason, getFixtureId, getTeamInfo, getPlayerId } = soccerSlice.actions;

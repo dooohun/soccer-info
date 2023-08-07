@@ -4,10 +4,10 @@ import Leagues from "../components/Leagues";
 import GameSchedule from "../components/GameSchedule";
 import TeamPlayers from "../components/TeamPlayers";
 import Navbar from "../components/Navbar";
+import PlayerModal from "../components/PlayerModal";
 
-
-import { useSelector } from "react-redux";
 import { styled, createGlobalStyle } from "styled-components";
+
 
 const GlobalStyle = createGlobalStyle`
   body{
@@ -42,9 +42,6 @@ const TeamInfoContentContainer = styled.div`
 
 
 export default function TeamInfo() {
-  const selectedLeagueId = useSelector((state) => state.soccerInfo.leagueId);
-  const selectedTeamId = useSelector((state) => state.soccerInfo.teamId);
-
   return (
     <>
       <GlobalStyle />
@@ -52,16 +49,15 @@ export default function TeamInfo() {
       <TeamInfoPageContainer>
         <Sidebar>
           <Leagues />
-          {selectedLeagueId !== 0 ? <Teams /> : <div></div> }
+          <Teams />
         </Sidebar>
-        <div>
-          <TeamInfoContentContainer>
-            {selectedLeagueId !== 0 ? <TeamDescription /> : <div></div>}
-            {selectedLeagueId !== 0 ? <TeamPlayers /> : <div></div>}
-            {selectedLeagueId !== 0  && selectedTeamId !== 0 ? <GameSchedule /> : <div></div> }
-          </TeamInfoContentContainer>
-        </div>
+        <TeamInfoContentContainer>
+          <TeamDescription />
+          <TeamPlayers /> 
+          <GameSchedule />
+        </TeamInfoContentContainer>
       </TeamInfoPageContainer>
+      <PlayerModal />
     </>
   )
 }

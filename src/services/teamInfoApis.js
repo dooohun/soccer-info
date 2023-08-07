@@ -13,15 +13,20 @@ export const teamInfoApis = createApi({
         return `teams?id=${teamId}`;
       }
     }),
-    getPlayerInformation: builder.query({
+    getSquadInformation: builder.query({
       query: (teamId) => {
-        return `players/squads?team=${teamId}`
+        return `players/squads?team=${teamId}`;
       }
     }),
     getGameSchedule: builder.query({
       query: (arg) => {
         const { leagueId, teamId } = arg;
-        return `fixtures?league=${leagueId}&team=${teamId}&season=2023`
+        return `fixtures?league=${leagueId}&team=${teamId}&season=2023`;
+      }
+    }),
+    getPlayerInformation: builder.query({
+      query: (playerId) => {
+        return `players?id=${playerId}&season=2022`;
       }
     })
   }),
@@ -30,6 +35,7 @@ export const teamInfoApis = createApi({
 
 export const {
   useGetTeamInformationQuery,
-  useGetPlayerInformationQuery,
+  useGetSquadInformationQuery,
   useGetGameScheduleQuery,
+  useGetPlayerInformationQuery
 } = teamInfoApis;

@@ -8,7 +8,6 @@ import Navbar from "../components/Navbar"
 
 import { styled, createGlobalStyle } from "styled-components";
 
-
 const GlobalStyle = createGlobalStyle`
   body{
     margin: 0;
@@ -31,7 +30,7 @@ const MainContentContainer = styled.div`
   grid-template-rows: repeat(7, 280px);
   align-items: start;
   justify-items: center;
-  height: calc(100vh - 103px);
+  height: calc(100vh - 72px);
   overflow-y: scroll;
   &::-webkit-scrollbar{
     display: none;
@@ -39,6 +38,7 @@ const MainContentContainer = styled.div`
 `
 
 export default function Main() {
+
   return (
     <>
       <GlobalStyle />
@@ -48,14 +48,12 @@ export default function Main() {
           <Leagues />
           <Teams />
         </Sidebar>
-        <div>
-          <MainContentContainer>
-            <RecentMatches /> 
-            <Prediction />
-            <TeamStandings />
-            <PlayerStandings />
-          </MainContentContainer>
-        </div>
+        <MainContentContainer>
+          <RecentMatches /> 
+          <Prediction />
+          <TeamStandings />
+          <PlayerStandings />
+        </MainContentContainer>
       </MainPageContainer>
     </>
   )

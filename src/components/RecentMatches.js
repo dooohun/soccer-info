@@ -86,7 +86,7 @@ export default function RecentMatches() {
 
   const [matches, setMatches] = useState([]);
   const { data, isLoading, error } = useGetRecentMatchesQuery(selectedLeagueId);
-
+  console.log(isLoading);
   const dispatch = useDispatch();
 
   useEffect(() => {

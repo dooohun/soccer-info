@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux"
 import { useGetPredictionQuery } from "../services/mainPageApis";
 import { useEffect, useState } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 const PredictionContainer = styled.div`
   display: flex;
@@ -43,12 +43,23 @@ const HomeProgressBar = styled.div`
   display: flex;
   justify-content: flex-end;
 `
+const progressBarAnimation = (rate) => keyframes`
+  from{
+    width: 0;
+  }
+  to{
+    width: ${rate};
+  }
+`
+
 
 const HomeProgress = styled.div`
   width: ${(props) => props.$rate};
   height: 17px;
   background-color: #5FF249;
+  animation: ${(props) => progressBarAnimation(props.$rate)} 1s linear;
 `
+
 const AwayProgressBar = styled.div`
   width: 120px;
   height: 17px;
@@ -59,6 +70,7 @@ const AwayProgress = styled.div`
   width: ${(props) => props.$rate};
   height: 17px;
   background-color: #3D79F2;
+  animation: ${(props) => progressBarAnimation(props.$rate)} 1s linear;
 `
 
 const RateBox = styled.div`
@@ -93,14 +105,14 @@ export default function Prediction() {
     return <div>No data available</div>;
   }
 
-  function makeGraph(stat) {
+  function makeGraph(stat, statTitle) {
     const { home, away } = predictionData[stat];
     const homeRate = Math.floor(parseFloat(parseFloat(home)));
     const awayRate = Math.floor(parseFloat(parseFloat(away)));
 
     return (
       <PredictionGraphs>
-        {stat}
+        {statTitle}
         <PredictionGraph>
           <RateBox>
             {homeRate}%
@@ -122,13 +134,13 @@ export default function Prediction() {
   return (
     <PredictionContainer>
       <MainTitle>Prediction</MainTitle>
-      {makeGraph("form")}
-      {makeGraph("att")}
-      {makeGraph("def")}
-      {makeGraph("poisson_distribution")}
-      {makeGraph("h2h")}
-      {makeGraph("goals")}
-      {makeGraph("total")}
+      {makeGraph("form", "Form")}
+      {makeGraph("att", "Attack")}
+      {makeGraph("def", "Defense")}
+      {makeGraph("poisson_distribution", "Possession")}
+      {makeGraph("h2h", "Head to Head")}
+      {makeGraph("goals", "Goals")}
+      {makeGraph("total", "Total")}
     </PredictionContainer>
   )
 }
