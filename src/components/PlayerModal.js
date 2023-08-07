@@ -25,11 +25,19 @@ const ModalContent = styled.div`
   height: 500px;
   background-color: #FFFFFF;
   border-radius: 10px;
+  padding: 10px;
   overflow-y: scroll;
 
   &::-webkit-scrollbar{
     display: none;
   }
+`
+
+const ModalContentTitle = styled.h2`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
 `
 
 const TableBox = styled.div`
@@ -38,6 +46,11 @@ const TableBox = styled.div`
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
+`
+
+const ButtonBox = styled.div`
+  display:flex;
+  justify-content: flex-end;
 `
 
 const Table = styled.table`
@@ -73,6 +86,13 @@ const TableData = styled.td`
 const LeagueLogo = styled.img`
   width: 50px;
   height: 50px;
+  object-fit: scale-down;
+`
+
+const PlayerPhoto = styled.img`
+  width: 150px;
+  height: 150px;
+  object-fit: scale-down;
 `
 
 export default function PlayerModal() {
@@ -111,15 +131,20 @@ export default function PlayerModal() {
     return (
       <ModalContainer>
         <ModalContent>
-          <Button variant="contained" onClick={toggleModal}>X</Button>
+          <ButtonBox>
+            <Button variant="contained" onClick={toggleModal}>X</Button>
+          </ButtonBox>
+          <ModalContentTitle>Player Statistics</ModalContentTitle>
           <p>
-            <img src={playerData.photo} alt={playerData.name} />
+            <PlayerPhoto src={playerData.photo} alt={playerData.name} />
             <br />
-            National: {playerData.nationality}
+            <b>Name</b>: {playerData.name}
             <br />
-            Height: {playerData.height}
+            <b>National</b>: {playerData.nationality}
             <br />
-            Weight: {playerData.weight}
+            <b>Height</b>: {playerData.height}
+            <br />
+            <b>Weight</b>: {playerData.weight}
           </p>
           <TableBox>
             <Table>
