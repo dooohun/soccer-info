@@ -68,6 +68,7 @@ const BackgroundBox = styled.div`
     top: 35%;
     border-radius: 50%;
     z-index: 1;
+    display: ${props => props.$selectedPlayerId !== null ? "none" : "block"};
   }
 `
 const GameScheduleItem = styled.div`
@@ -121,6 +122,7 @@ const TeamLogoImage = styled.img`
 export default function GameSchedule() {
   const selectedLeagueId = useSelector((state) => state.soccerInfo.leagueId);
   const selectedTeamId = useSelector((state) => state.soccerInfo.teamId);
+  const selectedPlayerId = useSelector((state) => state.soccerInfo.playerId);
 
   const { data, isLoading } = useGetGameScheduleQuery({
     leagueId: `${selectedLeagueId}`,
@@ -144,7 +146,7 @@ export default function GameSchedule() {
                   <DateText $isleft="true">
                     {(game.fixture.date).slice(0, 10)}
                   </DateText>
-                  <BackgroundBox $isleft="false">
+                  <BackgroundBox $isleft="false" $selectedPlayerId={selectedPlayerId}>
                     <GameScheduleItem>
                       <HomeTeam>
                         <TeamLogoImage alt={game.teams.home.name} src={game.teams.home.logo} />
@@ -161,7 +163,7 @@ export default function GameSchedule() {
             } else {
               return (
                 <Timeline key={idx}>
-                  <BackgroundBox $isleft="true">
+                  <BackgroundBox $isleft="true" $selectedPlayerId={selectedPlayerId}>
                     <GameScheduleItem>
                       <HomeTeam>
                         <TeamLogoImage alt={game.teams.home.name} src={game.teams.home.logo} />
