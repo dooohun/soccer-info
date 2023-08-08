@@ -32,6 +32,7 @@ const MainContentContainer = styled.div`
   justify-items: center;
   height: calc(100vh - 72px);
   overflow-y: scroll;
+  
   &::-webkit-scrollbar{
     display: none;
   }

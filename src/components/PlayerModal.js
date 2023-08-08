@@ -51,6 +51,8 @@ const TableBox = styled.div`
 const ButtonBox = styled.div`
   display:flex;
   justify-content: flex-end;
+  position: sticky;
+  top: 0;
 `
 
 const Table = styled.table`
@@ -120,10 +122,10 @@ export default function PlayerModal() {
   }
 
   if (isLoading) {
-    return <div>IsLoading...</div>
+    return <div></div>
   }
   if (!playerData || !statisticsData) {
-    return <div>No data available</div>;
+    return <div></div>;
   }
 
   if (selectedPlayerId && modal) {
