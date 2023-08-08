@@ -26,6 +26,7 @@ export default function Season() {
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           label="Season"
+          defaultValue={2022}
           value={season}
           onChange={handleChange}
         >
@@ -45,13 +46,3 @@ export default function Season() {
     </Box>
   )
 }
-
-/*
-<div>
-      <select onChange={seasonChangeHandler}>
-        {year.map((arr, idx) => (
-          <option key={idx} value={arr}>{arr}</option>
-        ))}
-      </select>
-    </div>
-*/

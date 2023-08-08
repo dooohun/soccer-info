@@ -56,7 +56,6 @@ export default function Teams() {
     const formattedTeamName = teamName.replace(/\s+/g, "_");
     navigate(`/teamInfo/${formattedTeamName}`);
     dispatch(getTeamInfo({ teamId: teamId, selectedTeam: src }));
-    console.log(teamId);
   };
   
 

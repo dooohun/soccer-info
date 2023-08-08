@@ -119,7 +119,6 @@ export default function PlayerModal() {
     setModal(!modal);
   }
 
-  console.log(data);
   if (isLoading) {
     return <div>IsLoading...</div>
   }
