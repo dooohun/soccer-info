@@ -5,8 +5,9 @@
 - 리그의 소속된 팀 순위, 개인 순위, 팀 정보, 최근 경기 예측 정보를 알 수 있음.
 - 5대 축구 리그에 대한 정보를 API로 불러옴 (참조: [API-SPORTS][api-sports Link])
 
-## 기능 설명
-
+## 웹 사이트 화면
+| 메인페이지 |
+| ------ |
 
 
   [api-sports Link]: <https://api-sports.io/>
