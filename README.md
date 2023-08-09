@@ -31,6 +31,14 @@
 | :-------------------------------------: |
 | <img src="images/gameScheduleDark.png"> |
 
-## 
+## 기술 스택
+- React
+- Redux Toolkit
+- React Router
+- Styled-Components
+- MUI
+- RTK Query
+
+
 
   [api-sports Link]: <https://api-sports.io/>
