@@ -6,7 +6,7 @@ const DescriptionContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #FFFFFF;
+  background-color: ${props => props.theme.backgroundColor2};
   border-radius: 10px;
   margin: 20px 0px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);

@@ -9,7 +9,7 @@ import Button from '@mui/material/Button';
 
 const RecentMatchesContainer = styled.div`
   width: 90%;
-  background-color: #FFFFFF;
+  background-color: ${props => props.theme.backgroundColor2};
   margin-top: 10px;
   border-radius: 10px;
   padding: 10px;
@@ -87,7 +87,6 @@ export default function RecentMatches() {
 
   const [matches, setMatches] = useState([]);
   const { data, isLoading, error } = useGetRecentMatchesQuery(selectedLeagueId);
-  console.log(isLoading);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -114,7 +113,6 @@ export default function RecentMatches() {
   function getSelectedFixtureId(e) {
     const selectedFixtureId = e.currentTarget.id;
     dispatch(getFixtureId({ fixtureId: selectedFixtureId }));
-    console.log(selectedFixtureId);
   }
 
   if (isLoading) {

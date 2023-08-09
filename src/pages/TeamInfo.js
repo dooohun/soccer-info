@@ -1,3 +1,4 @@
+import GlobalStyle from "../styles/GlobalStyle"
 import Navbar from "../components/Header/Navbar";
 import Teams from "../components/Sidebar/Teams";
 import Leagues from "../components/Sidebar/Leagues";
@@ -6,19 +7,12 @@ import GameSchedule from "../components/TeamInfo/GameSchedule";
 import TeamPlayers from "../components/TeamInfo/TeamPlayers";
 import PlayerModal from "../components/TeamInfo/PlayerModal";
 
-import { styled, createGlobalStyle } from "styled-components";
-
-const GlobalStyle = createGlobalStyle`
-  body{
-    margin: 0;
-    font-family: "Poppins-Regular";
-  }
-`
+import { styled } from "styled-components";
 
 const TeamInfoPageContainer = styled.div`
   display: grid;
   grid-template-columns: 3fr 17fr;
-  background-color: #F2F2F2;
+  background-color: ${props => props.theme.backgroundColor};
 `
 
 const Sidebar = styled.div`

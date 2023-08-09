@@ -15,6 +15,7 @@ const Circle = styled.div`
   justify-content: center;
   align-items: center;
   text-align: center;
+  color: black;
 `;
 
 const RedCircle = styled(Circle)`

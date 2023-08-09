@@ -5,13 +5,12 @@ import { styled } from "styled-components";
 // 팀 경기 일정(리그 전 경기(2023-2024), 날짜, home vs away)
 // 이후 추가하면 좋은 내용 => 팀 경기 클릭하면 상세보기 페이지 만들기
 
-
 const GameScheduleContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #FFFFFF;
+  background-color: ${props => props.theme.backgroundColor2};
   grid-column-start: 1;
   grid-column-end: 3;
   width: 80%;
@@ -77,9 +76,9 @@ const GameScheduleItem = styled.div`
   justify-content: center;
   width: 80%;
   padding: 10px;
-  border: solid 1px #F1F1F4;
+  border: solid 1px ${props => props.theme.borderColor};
   border-radius: 10px;
-  background-color: #F1F1F4;
+  background-color: ${props => props.theme.backgroundColor};
   position: relative;
 `
 

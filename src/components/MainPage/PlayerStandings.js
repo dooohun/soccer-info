@@ -5,7 +5,7 @@ import { useGetPlayerStandingsQuery } from "../../services/mainPageApis"
 const PlayerStandingsContainer = styled.div`
   grid-row-start: 3;
   grid-column-start: 2;
-  background-color: #FFFFFF;
+  background-color: ${props => props.theme.backgroundColor2};
   width: 80%;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -21,11 +21,11 @@ const MainTitle = styled.h2`
 const Table = styled.table`
   width: 100%;
   border-collapse: collapse;
-  background-color: #FFFFFF;
+  background-color: ${props => props.theme.backgroundColor2};
 `
 
 const TableHead = styled.thead`
-  background-color: #f0f0f0;
+  background-color: ${props => props.theme.headerBackground};
   font-weight: bold;
 `
 
@@ -36,7 +36,7 @@ const TableHeadCell = styled.th`
 
 const TableRow = styled.tr`
   &:nth-child(even) {
-    background-color: #f9f9f9;
+    background-color: ${props => props.theme.evenRowBackground};
   }
 `
 

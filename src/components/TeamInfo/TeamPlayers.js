@@ -8,7 +8,7 @@ const TeamPlayersContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #FFFFFF;
+  background-color: ${props => props.theme.backgroundColor2};
   width: 90%;
   height: 90vh;
   border-radius: 10px;
@@ -28,13 +28,13 @@ const MainTitle = styled.h2`
 
 const Table = styled.table`
   border-collapse: collapse;
-  background-color: #FFFFFF;
+  background-color: ${props => props.theme.backgroundColor2};
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   width: 100%;
 `
 
 const TableHead = styled.thead`
-  background-color: #f0f0f0;
+  background-color: ${props => props.theme.headerBackground};
   font-weight: bold;
   position: ${props => props.$sticky ? 'sticky' : 'static'};
   top: 0;
@@ -49,7 +49,7 @@ const TableHeadCell = styled.th`
 const TableRow = styled.tr`
   cursor: pointer;
   &:nth-child(even) {
-    background-color: #f9f9f9;
+    background-color: ${props => props.theme.evenRowBackground};
   }
 `
 

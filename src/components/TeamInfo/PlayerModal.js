@@ -23,7 +23,7 @@ const ModalContainer = styled.div`
 const ModalContent = styled.div`
   width: 800px;
   height: 500px;
-  background-color: #FFFFFF;
+  background-color: ${props => props.theme.backgroundColor2};
   border-radius: 10px;
   padding: 10px;
   overflow-y: scroll;
@@ -57,12 +57,12 @@ const ButtonBox = styled.div`
 
 const Table = styled.table`
   border-collapse: collapse;
-  background-color: #FFFFFF;
+  background-color: ${props => props.theme.backgroundColor2};
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 `
 
 const TableHead = styled.thead`
-  background-color: #f0f0f0;
+  background-color: ${props => props.theme.headerBackground};
   font-weight: bold;
   position: sticky;
   top: 0;
@@ -76,7 +76,7 @@ const TableHeadCell = styled.th`
 
 const TableRow = styled.tr`
   &:nth-child(even) {
-    background-color: #f9f9f9;
+    background-color: ${props => props.theme.evenRowBackground};
   }
 `
 

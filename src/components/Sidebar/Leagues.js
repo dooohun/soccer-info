@@ -14,8 +14,8 @@ const LogoContainer = styled.div`
   justify-content: center;
   position: sticky;
   height: calc(100vh - 72px);
-  background-color: #FFFFFF;
-  border-right: 2px solid #ebedf3;
+  background-color: ${props => props.theme.backgroundColor2};
+  border-right: 2px solid ${props => props.theme.borderColor};
   overflow-y: hidden;
   width: calc(100% - 2px);
 `

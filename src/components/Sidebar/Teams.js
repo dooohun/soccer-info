@@ -11,7 +11,7 @@ const TeamsLogoContainer = styled.div`
   flex-direction: column;
   align-items: center;
   position: sticky;
-  background-color: #FFFFFF;
+  background-color: ${props => props.theme.backgroundColor2};
   width: 100%;
   height: calc(100vh - 72px);
   overflow-y: scroll;

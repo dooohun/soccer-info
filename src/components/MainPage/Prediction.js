@@ -8,7 +8,7 @@ const PredictionContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #FFFFFF;
+  background-color: ${props => props.theme.backgroundColor2};;
   width: 80%;
   border-radius: 10px;
   margin-top: 10px;

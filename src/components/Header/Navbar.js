@@ -1,12 +1,15 @@
 import { styled } from "styled-components"
 import { Link } from "react-router-dom"
+import { toggleDarkMode } from "../../stores/darkModeSlice";
+import Switch from '@mui/material/Switch';
+import { useDispatch, useSelector } from "react-redux";
 
 const MainHeader = styled.header`
   display: grid;
   grid-template-columns: 3fr 17fr;
   position: sticky;
   text-align: center;
-  background-color: #F2F2F2;
+  background-color: ${props => props.theme.backgroundColor};
   height: 72px;
 `
 
@@ -15,7 +18,6 @@ const NavHeader = styled.div`
   justify-content: space-between;
   align-items: center;
   height: 100%;
-  width: calc(100% - 230px);
 `
 
 const LogoBox = styled.div`
@@ -24,8 +26,8 @@ const LogoBox = styled.div`
   align-items: center;
   width: 100%;
   height: calc(100% - 2px);
-  background-color: #FFFFFF;
-  border-bottom: 2px solid #ebedf3;
+  background-color: ${props => props.theme.backgroundColor2};
+  border-bottom: 2px solid ${props => props.theme.borderColor};
 `
 
 const MainLogo = styled(Link)`
@@ -45,15 +47,31 @@ const MainTitle = styled.h2`
   font-size: 30px;
 `
 
+const ToggleSwitch = styled(Switch)`
+  margin-right: 25px;
+`
+
 export default function Navbar() {
+  const dispatch = useDispatch();
+  const darkMode = useSelector(state => state.darkMode);
+
+  const handleDarkModeToggle = () => {
+    dispatch(toggleDarkMode());
+  }
+
   return (
-    <MainHeader>
-      <LogoBox>
-        <MainLogo to={process.env.PUBLIC_URL + "/"}>ProFive</MainLogo>
-      </LogoBox>
-      <NavHeader>
-        <MainTitle>Welcome To ProFive</MainTitle>
-      </NavHeader>
-    </MainHeader>
+      <MainHeader>
+        <LogoBox>
+          <MainLogo to={process.env.PUBLIC_URL + "/"}>ProFive</MainLogo>
+        </LogoBox>
+        <NavHeader>
+          <MainTitle>Welcome To ProFive</MainTitle>
+          <ToggleSwitch
+            aria-label="Switch demo"
+            checked={darkMode}
+            onClick={handleDarkModeToggle}
+          />
+        </NavHeader>
+      </MainHeader>
   )
 }

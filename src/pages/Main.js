@@ -1,3 +1,4 @@
+import GlobalStyle from "../styles/GlobalStyle"
 import Navbar from "../components/Header/Navbar"
 import Leagues from "../components/Sidebar/Leagues"
 import Teams from "../components/Sidebar/Teams";
@@ -6,18 +7,12 @@ import PlayerStandings from "../components/MainPage/PlayerStandings";
 import RecentMatches from "../components/MainPage/RecentMatches";
 import Prediction from "../components/MainPage/Prediction";
 
-import { styled, createGlobalStyle } from "styled-components";
+import { styled } from "styled-components";
 
-const GlobalStyle = createGlobalStyle`
-  body{
-    margin: 0;
-    font-family: "Poppins-Regular";
-  }
-`
 const MainPageContainer = styled.div`
   display: grid;
   grid-template-columns: 3fr 17fr;
-  background-color: #F2F2F2;
+  background-color: ${props => props.theme.backgroundColor};
 `
 
 const Sidebar = styled.div`
@@ -37,25 +32,25 @@ const MainContentContainer = styled.div`
     display: none;
   }
 `
+// DarkModeSlice.js에서 토글 => Global, table에서 반응
 
 export default function Main() {
-
   return (
     <>
-      <GlobalStyle />
-      <Navbar />
-      <MainPageContainer>
-        <Sidebar>
-          <Leagues />
-          <Teams />
-        </Sidebar>
-        <MainContentContainer>
-          <RecentMatches /> 
-          <Prediction />
-          <TeamStandings />
-          <PlayerStandings />
-        </MainContentContainer>
-      </MainPageContainer>
+        <GlobalStyle />
+        <Navbar />
+        <MainPageContainer>
+          <Sidebar>
+            <Leagues />
+            <Teams />
+          </Sidebar>
+          <MainContentContainer>
+            <RecentMatches /> 
+            <Prediction />
+            <TeamStandings />
+            <PlayerStandings />
+          </MainContentContainer>
+        </MainPageContainer>
     </>
   )
 }

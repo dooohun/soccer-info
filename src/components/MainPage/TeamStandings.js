@@ -5,7 +5,7 @@ import FormShape, { FormState } from "../../styles/FromShape";
 import Season from "./Seasons";
 
 const LeagueStandingsContainer = styled.div`
-  background-color: #FFFFFF;
+  background-color: ${props => props.theme.backgroundColor2};
   width: 90%;
   border-radius: 10px;
   margin: 20px 0px;
@@ -37,7 +37,7 @@ const Table = styled.table`
 `
 
 const TableHead = styled.thead`
-  background-color: #f0f0f0;
+  background-color: ${props => props.theme.headerBackground};
   font-weight: bold;
 `
 
@@ -48,7 +48,7 @@ const TableHeadCell = styled.th`
 
 const TableRow = styled.tr`
   &:nth-child(even) {
-    background-color: #f9f9f9;
+    background-color: ${props => props.theme.evenRowBackground};
   }
 `
 
