@@ -32,7 +32,8 @@
 | <img src="images/gameScheduleDark.png"> |
 
 ## 기술 스택
-<img src="images/tech_stack.png">
+<img src="images/tech_stack.png" width="500px" height="300px">
+
 - React
 - Redux Toolkit
 - React Router
