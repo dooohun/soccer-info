@@ -8,7 +8,7 @@
 ## 웹 사이트 화면
 | 메인페이지 | 다크모드 |
 | ------ | ------ |
-|![main](../images/main.png) | |
+|![main](./images/main.png) | |
 
 
   [api-sports Link]: <https://api-sports.io/>
