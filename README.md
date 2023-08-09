@@ -32,12 +32,14 @@
 | <img src="images/gameScheduleDark.png"> |
 
 ## 기술 스택
+<img src="images/tech_stack.png" width="500px" height="300px">
+
 - React
 - Redux Toolkit
 - React Router
 - Styled-Components
 - MUI
-- RTK Query
+- RTK Query: 하나의 API slice와 여러 개의 엔드 포인트들을 한 곳에 관리 가능하다.
 
 
 
