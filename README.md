@@ -6,8 +6,9 @@
 - 5대 축구 리그에 대한 정보를 API로 불러옴 (참조: [API-SPORTS][api-sports Link])
 
 ## 웹 사이트 화면
-| 메인페이지 |
-| ------ |
+| 메인페이지 | 다크모드 |
+| ------ | ------ |
+|![main](../images/main.png) | |
 
 
   [api-sports Link]: <https://api-sports.io/>
