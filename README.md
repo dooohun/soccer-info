@@ -7,17 +7,29 @@
 - 5대 축구 리그에 대한 정보를 API로 불러옴 (참조: [API-SPORTS][api-sports Link])
 
 ## 웹 사이트 화면
-|             홈              |           다크모드              |
-| :-------------------------: | :-----------------------------: |
-| <img src="images/main.png"> | <img src="images/mainDark.png"> |
+|             홈              |
+| :-------------------------: |
+| <img src="images/main.png"> |
 
-|               팀              |              다크모드               |
-| :---------------------------: | :---------------------------------: |
-| <img src="teamInfo/main.png"> | <img src="images/teamInfoDark.png"> |
+|           홈 다크모드           |
+| :-----------------------------: |
+| <img src="images/mainDark.png"> |
 
-|               경기 일정             |                 다크모드               |
-| :---------------------------------: | :-------------------------------------: |
-| <img src="images/gameSchedule.png"> | <img src="images/gameScheduleDark.png"> |
+|               팀              |
+| :---------------------------: |
+| <img src="images/teamInfo.png"> |
+
+|              다크모드               |
+| :---------------------------------: |
+| <img src="images/teamInfoDark.png"> |
+
+|               경기 일정             |
+| :---------------------------------: |
+| <img src="images/gameSchedule.png"> |
+
+|                 다크모드               |
+| :-------------------------------------: |
+| <img src="images/gameScheduleDark.png"> |
 
 ## 
 
