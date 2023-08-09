@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux"
-import { useGetGameScheduleQuery } from "../services/teamInfoApis";
+import { useGetGameScheduleQuery } from "../../services/teamInfoApis";
 import { styled } from "styled-components";
 
 // 팀 경기 일정(리그 전 경기(2023-2024), 날짜, home vs away)

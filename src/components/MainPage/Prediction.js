@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux"
-import { useGetPredictionQuery } from "../services/mainPageApis";
+import { useGetPredictionQuery } from "../../services/mainPageApis";
 import { useEffect, useState } from "react";
 import styled, { keyframes } from "styled-components";
 

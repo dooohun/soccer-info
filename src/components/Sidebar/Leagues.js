@@ -1,11 +1,11 @@
 import { useDispatch } from "react-redux";
-import { getLeagueId } from "../stores/soccerSlice";
+import { getLeagueId } from "../../stores/soccerSlice";
 import styled from "styled-components";
-import league1 from "../static/image/premierleague.png"
-import league2 from "../static/image/bundesliga.png"
-import league3 from "../static/image/laliga.png"
-import league4 from "../static/image/ligue1.png"
-import league5 from "../static/image/seriea.png"
+import league1 from "../../static/image/premierleague.png"
+import league2 from "../../static/image/bundesliga.png"
+import league3 from "../../static/image/laliga.png"
+import league4 from "../../static/image/ligue1.png"
+import league5 from "../../static/image/seriea.png"
 
 const LogoContainer = styled.div`
   display: flex;

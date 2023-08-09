@@ -1,10 +1,10 @@
-import Teams from "../components/Teams";
-import TeamDescription from "../components/TeamDescription";
-import Leagues from "../components/Leagues";
-import GameSchedule from "../components/GameSchedule";
-import TeamPlayers from "../components/TeamPlayers";
-import Navbar from "../components/Navbar";
-import PlayerModal from "../components/PlayerModal";
+import Navbar from "../components/Header/Navbar";
+import Teams from "../components/Sidebar/Teams";
+import Leagues from "../components/Sidebar/Leagues";
+import TeamDescription from "../components/TeamInfo/TeamDescription";
+import GameSchedule from "../components/TeamInfo/GameSchedule";
+import TeamPlayers from "../components/TeamInfo/TeamPlayers";
+import PlayerModal from "../components/TeamInfo/PlayerModal";
 
 import { styled, createGlobalStyle } from "styled-components";
 

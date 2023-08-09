@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { getSeason } from "../stores/soccerSlice";
+import { getSeason } from "../../stores/soccerSlice"
 
 import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';

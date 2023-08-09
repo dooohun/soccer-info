@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
-import { useGetPlayerStandingsQuery } from "../services/mainPageApis";
 import { styled } from "styled-components";
+import { useGetPlayerStandingsQuery } from "../../services/mainPageApis"
 
 const PlayerStandingsContainer = styled.div`
   grid-row-start: 3;

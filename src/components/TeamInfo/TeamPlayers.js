@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux"
-import { useGetSquadInformationQuery} from "../services/teamInfoApis"
+import { useGetSquadInformationQuery} from "../../services/teamInfoApis"
 import { styled } from "styled-components"
-import { getPlayerId } from "../stores/soccerSlice"
+import { getPlayerId } from "../../stores/soccerSlice"
 
 
 const TeamPlayersContainer = styled.div`

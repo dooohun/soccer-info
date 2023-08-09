@@ -1,10 +1,10 @@
-import Leagues from "../components/Leagues"
-import TeamStandings from "../components/TeamStandings"
-import PlayerStandings from "../components/PlayerStandings";
-import RecentMatches from "../components/RecentMatches";
-import Prediction from "../components/Prediction";
-import Teams from "../components/Teams";
-import Navbar from "../components/Navbar"
+import Navbar from "../components/Header/Navbar"
+import Leagues from "../components/Sidebar/Leagues"
+import Teams from "../components/Sidebar/Teams";
+import TeamStandings from "../components/MainPage/TeamStandings"
+import PlayerStandings from "../components/MainPage/PlayerStandings";
+import RecentMatches from "../components/MainPage/RecentMatches";
+import Prediction from "../components/MainPage/Prediction";
 
 import { styled, createGlobalStyle } from "styled-components";
 

@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
-import { useGetTeamStandingsQuery } from "../services/mainPageApis";
+import { useGetTeamStandingsQuery } from "../../services/mainPageApis";
 import { useSelector } from "react-redux";
-import FormShape, { FormState } from "../styles/FromShape";
+import FormShape, { FormState } from "../../styles/FromShape";
 import Season from "./Seasons";
 
 const LeagueStandingsContainer = styled.div`

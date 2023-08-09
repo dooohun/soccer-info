@@ -3,8 +3,8 @@ import { useState } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom"; 
 
-import { getTeamInfo } from "../stores/soccerSlice";
-import { useGetTeamStandingsQuery } from "../services/mainPageApis";
+import { getTeamInfo } from "../../stores/soccerSlice";
+import { useGetTeamStandingsQuery } from "../../services/mainPageApis";
 
 const TeamsLogoContainer = styled.div`
   display: flex;

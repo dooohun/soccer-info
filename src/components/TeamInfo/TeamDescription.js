@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux"
-import { useGetTeamInformationQuery } from "../services/teamInfoApis"
+import { useGetTeamInformationQuery } from "../../services/teamInfoApis"
 import { styled } from "styled-components"
 
 const DescriptionContainer = styled.div`

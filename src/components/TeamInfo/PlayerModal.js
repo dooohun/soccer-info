@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from "react-redux"
-import { useGetPlayerInformationQuery } from "../services/teamInfoApis"
+import { useGetPlayerInformationQuery } from "../../services/teamInfoApis"
 import { styled } from "styled-components"
 import { useEffect, useState } from "react"
-import { getPlayerId } from "../stores/soccerSlice"
+import { getPlayerId } from "../../stores/soccerSlice"
 import Button from '@mui/material/Button';
 
 const ModalContainer = styled.div`

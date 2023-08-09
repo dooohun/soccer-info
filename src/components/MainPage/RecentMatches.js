@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
-import { useGetRecentMatchesQuery } from "../services/mainPageApis";
+import { useGetRecentMatchesQuery } from "../../services/mainPageApis";
 import { useDispatch, useSelector } from "react-redux";
-import { getFixtureId } from "../stores/soccerSlice";
+import { getFixtureId } from "../../stores/soccerSlice"
 import { styled } from "styled-components";
 
 import ButtonGroup from '@mui/material/ButtonGroup';
@@ -46,6 +46,7 @@ const MainSection = styled.div`
   border-radius: 10px;
   max-height: 135px;
   height: 135px;
+  cursor: pointer;
 `
 const MainMatch = styled.div`
   display: flex;
