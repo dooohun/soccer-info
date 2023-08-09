@@ -15,7 +15,7 @@ export const darkTheme = {
   borderColor: "#444444",
   evenRowBackground: "#252525",
   headerBackground: "#1E1E1E",
-  modalBackground: "rgba(245, 245, 245, 0.9)"
+  modalBackground: "rgba(34, 34, 34, 0.9)"
 }
 
 export const theme = {
