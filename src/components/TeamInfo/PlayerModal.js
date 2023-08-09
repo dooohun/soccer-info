@@ -17,7 +17,7 @@ const ModalContainer = styled.div`
   bottom: 0;
   position: fixed;
 
-  background-color: rgba(49,49,49,0.8);
+  background-color: ${props => props.theme.modalBackground};
 `
 
 const ModalContent = styled.div`

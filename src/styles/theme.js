@@ -5,6 +5,7 @@ export const lightTheme = {
   borderColor: "#ebedf3",
   evenRowBackground: "#f9f9f9",
   headerBackground: "#f0f0f0",
+  modalBackground: "rgba(49,49,49,0.8)"
 }
 
 export const darkTheme = {
@@ -14,6 +15,7 @@ export const darkTheme = {
   borderColor: "#444444",
   evenRowBackground: "#252525",
   headerBackground: "#1E1E1E",
+  modalBackground: "rgba(245, 245, 245, 0.9)"
 }
 
 export const theme = {
