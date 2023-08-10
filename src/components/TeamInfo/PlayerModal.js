@@ -86,15 +86,18 @@ const TableData = styled.td`
 `
 
 const LeagueLogo = styled.img`
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
   object-fit: scale-down;
+  background-color: #FFFFFF;
+  border-radius: 20%;
 `
 
 const PlayerPhoto = styled.img`
   width: 150px;
   height: 150px;
   object-fit: scale-down;
+  border-radius: 10px;
 `
 
 export default function PlayerModal() {
