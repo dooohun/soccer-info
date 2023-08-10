@@ -5,7 +5,7 @@ import Leagues from "../components/Sidebar/Leagues";
 import TeamDescription from "../components/TeamInfo/TeamDescription";
 import GameSchedule from "../components/TeamInfo/GameSchedule";
 import TeamPlayers from "../components/TeamInfo/TeamPlayers";
-import PlayerModal from "../components/TeamInfo/PlayerModal";
+import PlayerModal from "../components/Modal/PlayerModal"
 
 import { styled } from "styled-components";
 

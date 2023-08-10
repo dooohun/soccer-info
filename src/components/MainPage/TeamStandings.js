@@ -1,7 +1,11 @@
-import { styled } from "styled-components";
 import { useGetTeamStandingsQuery } from "../../services/mainPageApis";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom"; 
+import { getTeamInfo } from "../../stores/soccerSlice";
+
 import FormShape, { FormState } from "../../styles/FromShape";
+import { styled } from "styled-components";
+
 import Season from "./Seasons";
 
 const LeagueStandingsContainer = styled.div`
@@ -47,6 +51,7 @@ const TableHeadCell = styled.th`
 `
 
 const TableRow = styled.tr`
+  cursor: pointer;
   &:nth-child(even) {
     background-color: ${props => props.theme.evenRowBackground};
   }
@@ -65,22 +70,30 @@ const TableTeamCell = styled.td`
 export default function TeamStandings() {
   const selectedLeagueId = useSelector((state) => state.soccerInfo.leagueId);
   const selectedSeason = useSelector((state) => state.soccerInfo.season);
+  
   const { data, error, isLoading } = useGetTeamStandingsQuery({
     leagueId: `${selectedLeagueId}`,
     year: `${selectedSeason}`
   });
+
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const TeamClickHandler = (teamId, src, teamName) => {
+    const formattedTeamName = teamName.replace(/\s+/g, "_");
+    navigate(`/teamInfo/${formattedTeamName}`);
+    dispatch(getTeamInfo({ teamId: teamId, selectedTeam: src }));
+  };
+
   if (isLoading) {
-    // 데이터 로딩 중일 때 처리 (로딩 스피너 등)
     return <div>Loading...</div>;
   }
 
   if (error) {
-    // 에러 발생 시 처리
     return <div>Error occurred</div>;
   }
 
   if (!data) {
-    // 데이터가 없는 경우 처리
     return <div>No data available</div>;
   }
 
@@ -104,7 +117,7 @@ export default function TeamStandings() {
         <tbody>
           {data.response[0].league.standings[0].map((arr, idx) => {
             return (
-              <TableRow key={idx}>
+              <TableRow key={idx} onClick={() => TeamClickHandler(arr.team.id, arr.team.logo, arr.team.name)}>
                 <TableCell>{arr.rank}</TableCell>
                 <TableTeamCell>
                   <TeamLogoImage alt={arr.team.name} src={arr.team.logo} />

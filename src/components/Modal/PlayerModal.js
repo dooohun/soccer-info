@@ -25,7 +25,7 @@ const ModalContent = styled.div`
   height: 500px;
   background-color: ${props => props.theme.backgroundColor2};
   border-radius: 10px;
-  padding: 10px;
+  padding: 10px 20px;
   overflow-y: scroll;
 
   &::-webkit-scrollbar{
@@ -71,7 +71,7 @@ const TableHead = styled.thead`
 
 const TableHeadCell = styled.th`
   padding: 12px 8px;
-  text-align: center;
+  text-align: ${props => props.$leagueCell==="true" ? "start" : "center"};
 `
 
 const TableRow = styled.tr`
@@ -91,6 +91,11 @@ const LeagueLogo = styled.img`
   object-fit: scale-down;
   background-color: #FFFFFF;
   border-radius: 20%;
+`
+const PlayerPhotoBox = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `
 
 const PlayerPhoto = styled.img`
@@ -139,8 +144,10 @@ export default function PlayerModal() {
             <Button variant="contained" onClick={toggleModal}>X</Button>
           </ButtonBox>
           <ModalContentTitle>2022-2023 Player Statistics</ModalContentTitle>
-          <p>
-            <PlayerPhoto src={playerData.photo} alt={playerData.name} />
+          <div>
+            <PlayerPhotoBox>
+              <PlayerPhoto src={playerData.photo} alt={playerData.name} />
+            </PlayerPhotoBox>
             <br />
             <b>Name</b>: {playerData.name}
             <br />
@@ -149,12 +156,12 @@ export default function PlayerModal() {
             <b>Height</b>: {playerData.height}
             <br />
             <b>Weight</b>: {playerData.weight}
-          </p>
+          </div>
           <TableBox>
             <Table>
               <TableHead>
                 <TableRow>
-                  <TableHeadCell>League</TableHeadCell>
+                  <TableHeadCell $leagueCell="true">League</TableHeadCell>
                   <TableHeadCell>Participation</TableHeadCell>
                   <TableHeadCell>Goal</TableHeadCell>
                   <TableHeadCell>Assist</TableHeadCell>

@@ -96,7 +96,7 @@ export default function Prediction() {
   }, [data, predictionData])
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <div>Loading</div>;
   }
 
   if (error) {
@@ -104,7 +104,7 @@ export default function Prediction() {
   }
 
   if (!data || Object.keys(predictionData).length === 0) {
-    return <div>No data available</div>;
+    return <div>Loading</div>;
   }
 
   function makeGraph(stat, statTitle) {

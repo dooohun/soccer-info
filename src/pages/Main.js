@@ -4,8 +4,9 @@ import Leagues from "../components/Sidebar/Leagues"
 import Teams from "../components/Sidebar/Teams";
 import TeamStandings from "../components/MainPage/TeamStandings"
 import PlayerStandings from "../components/MainPage/PlayerStandings";
-import RecentMatches from "../components/MainPage/RecentMatches";
+import NextMatches from "../components/MainPage/NextMatches";
 import Prediction from "../components/MainPage/Prediction";
+import PlayerModal from "../components/Modal/PlayerModal"
 
 import { styled } from "styled-components";
 
@@ -32,25 +33,25 @@ const MainContentContainer = styled.div`
     display: none;
   }
 `
-// DarkModeSlice.js에서 토글 => Global, table에서 반응
 
 export default function Main() {
   return (
     <>
-        <GlobalStyle />
-        <Navbar />
-        <MainPageContainer>
-          <Sidebar>
-            <Leagues />
-            <Teams />
-          </Sidebar>
-          <MainContentContainer>
-            <RecentMatches /> 
-            <Prediction />
-            <TeamStandings />
-            <PlayerStandings />
-          </MainContentContainer>
-        </MainPageContainer>
+      <GlobalStyle />
+      <Navbar />
+      <MainPageContainer>
+        <Sidebar>
+          <Leagues />
+          <Teams />
+        </Sidebar>
+        <MainContentContainer>
+          <NextMatches /> 
+          <Prediction />
+          <TeamStandings />
+          <PlayerStandings />
+        </MainContentContainer>
+      </MainPageContainer>
+      <PlayerModal />
     </>
   )
 }

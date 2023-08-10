@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import { toggleDarkMode } from "../../stores/darkModeSlice";
 import Switch from '@mui/material/Switch';
 import { useDispatch, useSelector } from "react-redux";
+import { getTeamInfo } from "../../stores/soccerSlice";
 
 const MainHeader = styled.header`
   display: grid;
@@ -55,6 +56,10 @@ export default function Navbar() {
   const dispatch = useDispatch();
   const darkMode = useSelector(state => state.darkMode);
 
+  const mainLogoHandler = () => {
+    dispatch(getTeamInfo({ teamId: 50, selectedTeam: null }));
+  }
+
   const handleDarkModeToggle = () => {
     dispatch(toggleDarkMode());
   }
@@ -62,7 +67,7 @@ export default function Navbar() {
   return (
       <MainHeader>
         <LogoBox>
-          <MainLogo to={process.env.PUBLIC_URL + "/"}>ProFive</MainLogo>
+          <MainLogo to={process.env.PUBLIC_URL + "/"} onClick={mainLogoHandler}>ProFive</MainLogo>
         </LogoBox>
         <NavHeader>
           <MainTitle>Welcome To ProFive</MainTitle>

@@ -22,9 +22,9 @@ export default function Season() {
   return (
     <Box>
       <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label" sx={darkMode ? {color: 'white'} : { }}>Season</InputLabel>
+        <InputLabel id="demo-simple-select-label" sx={darkMode ? {color: '#FFFFFF'} : { }}>Season</InputLabel>
         <Select
-          sx={darkMode ? { backgroundColor: '#1565c0', color: "white" } : { }}
+          sx={darkMode ? { backgroundColor: '#1565c0', color: "#FFFFFF" } : {}}
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           label="Season"

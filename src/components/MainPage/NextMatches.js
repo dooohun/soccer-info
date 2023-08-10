@@ -44,8 +44,9 @@ const MainSection = styled.div`
   padding: 10px;
   border: solid 3px #EEEAF0;
   border-radius: 10px;
-  max-height: 135px;
-  height: 135px;
+  height: 130px;
+  filter: ${props => props.$isselected === "true" ? "brightness(100%)" : "brightness(70%)"};
+  transition: filter 0.1s ease-in-out;
   cursor: pointer;
 `
 const MainMatch = styled.div`
@@ -82,8 +83,9 @@ const TeamLogoImage = styled.img`
   height: 50px;
 `
 
-export default function RecentMatches() {
+export default function NextMatches() {
   const selectedLeagueId = useSelector((state) => state.soccerInfo.leagueId);
+  const darkMode = useSelector((state) => state.darkMode);
 
   const [matches, setMatches] = useState([]);
   const { data, isLoading, error } = useGetRecentMatchesQuery(selectedLeagueId);
@@ -110,32 +112,33 @@ export default function RecentMatches() {
     }
   }
 
-  function getSelectedFixtureId(e) {
-    const selectedFixtureId = e.currentTarget.id;
-    dispatch(getFixtureId({ fixtureId: selectedFixtureId }));
+  const [selectedSectionIdx, setSelectedSectionIdx] = useState(1035037);
+
+  function handleMainSection(id) {
+    dispatch(getFixtureId({ fixtureId: id }));
+    setSelectedSectionIdx(id);
   }
 
   if (isLoading) {
-    return <div></div>;
+    return <div>Loading</div>;
   }
 
   if (error) {
-    // 에러 발생 시 처리
     return <div>Error occurred</div>;
   }
 
   if (!data) {
-    // 데이터가 없는 경우 처리
     return <div>No data available</div>;
   }
   return (
     <RecentMatchesContainer>
       <MainTitle>Next Matches</MainTitle>
-        <ButtonBox>
-          <ButtonGroup
+      <ButtonBox>
+        <ButtonGroup
           disableElevation
           variant="contained"
-          aria-label="Disable evlevation buttons"
+          aria-label="Disabled elevation buttons"
+          color={darkMode ? "primary" : "inherit"}
         >
           <Button onClick={handlePrevPage}>Prev</Button>
           <Button onClick={handleNextPage}>Next</Button>
@@ -144,7 +147,12 @@ export default function RecentMatches() {
       <MainMatches>
         {matches.slice(currentPage * itemsPerPage, currentPage * itemsPerPage + itemsPerPage).map((arr, idx) => {
           return (
-            <MainSection onClick={getSelectedFixtureId} key={idx} id={arr.fixture.id}>
+            <MainSection
+              onClick={() => handleMainSection(arr.fixture.id)}
+              key={idx}
+              id={arr.fixture.id}
+              $isselected={selectedSectionIdx === arr.fixture.id ? "true" : "false"}
+            >
               {(arr.fixture.date).slice(0, 10)}
               <MainMatch>
                 <HomeTeam>

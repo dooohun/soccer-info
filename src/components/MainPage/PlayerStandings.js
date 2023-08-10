@@ -1,6 +1,7 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { styled } from "styled-components";
 import { useGetPlayerStandingsQuery } from "../../services/mainPageApis"
+import { getPlayerId } from "../../stores/soccerSlice";
 
 const PlayerStandingsContainer = styled.div`
   grid-row-start: 3;
@@ -35,6 +36,7 @@ const TableHeadCell = styled.th`
 `
 
 const TableRow = styled.tr`
+  cursor: pointer;
   &:nth-child(even) {
     background-color: ${props => props.theme.evenRowBackground};
   }
@@ -66,17 +68,23 @@ export default function PlayerStandings() {
     year: `${selectedSeason}`,
   });
 
+  const dispatch = useDispatch();
+  function dispatchPlayerId(e) {
+    const clickedPlayerId = e.target.closest("tr").id;
+    if (data) {
+      dispatch(getPlayerId({ playerId: clickedPlayerId }));
+    }
+  }
+
   if (isLoading) {
     return <div></div>;
   }
 
   if (error) {
-    // 에러 발생 시 처리
     return <div>Error occurred</div>;
   }
 
   if (!data) {
-    // 데이터가 없는 경우 처리
     return <div>No data available</div>;
   }
   
@@ -94,7 +102,7 @@ export default function PlayerStandings() {
         <tbody>
           {data.response.slice(0, 10).map((arr, idx) => {
             return (
-              <TableRow key={idx}>
+              <TableRow key={idx} id={arr.player.id} onClick={dispatchPlayerId}>
                 <TableData>{idx + 1}</TableData>
                 <TablePlayerData>
                   <PlayerImage alt={arr.player.name} src={arr.player.photo} />

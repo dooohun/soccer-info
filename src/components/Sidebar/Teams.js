@@ -39,7 +39,7 @@ const TeamLogoImage = styled.img`
 export default function Teams() {
   const selectedLeagueId = useSelector((state) => state.soccerInfo.leagueId);
   const selectedSeason = useSelector((state) => state.soccerInfo.season);
-  const selectedTeam = useSelector((state) => state.soccerInfo.selectedTeam)
+  const selectedTeam = useSelector((state) => state.soccerInfo.selectedTeam);
 
   const { data, error, isLoading } = useGetTeamStandingsQuery({
     leagueId: `${selectedLeagueId}`,
@@ -60,7 +60,7 @@ export default function Teams() {
   
 
   if (isLoading) {
-    return <div></div>;
+    return <div>Loading</div>;
   }
 
   if (error) {
