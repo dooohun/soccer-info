@@ -16,9 +16,14 @@ const PredictionContainer = styled.div`
   padding: 15px 10px;
 `
 const MainTitle = styled.h2`
-  margin-bottom: 10px;
-  margin-top: 0;
+  margin: 0;
   text-align: center;
+`
+
+const MatchTeams = styled.p`
+  margin: 0;
+  font-size: 17px;
+  margin-bottom: 5px;
 `
 
 const PredictionGraphs = styled.div`
@@ -91,17 +96,14 @@ export default function Prediction() {
   }, [data, predictionData])
 
   if (isLoading) {
-    // 데이터 로딩 중일 때 처리 (로딩 스피너 등)
     return <div>Loading...</div>;
   }
 
   if (error) {
-    // 에러 발생 시 처리
     return <div>Error occurred</div>;
   }
 
   if (!data || Object.keys(predictionData).length === 0) {
-    // 데이터가 없는 경우 처리
     return <div>No data available</div>;
   }
 
@@ -134,6 +136,7 @@ export default function Prediction() {
   return (
     <PredictionContainer>
       <MainTitle>Prediction</MainTitle>
+      <MatchTeams>{data.response[0].teams.home.name} vs {data.response[0].teams.away.name}</MatchTeams>
       {makeGraph("form", "Form")}
       {makeGraph("att", "Attack")}
       {makeGraph("def", "Defense")}
