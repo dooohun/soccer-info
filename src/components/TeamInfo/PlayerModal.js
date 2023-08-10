@@ -138,7 +138,7 @@ export default function PlayerModal() {
           <ButtonBox>
             <Button variant="contained" onClick={toggleModal}>X</Button>
           </ButtonBox>
-          <ModalContentTitle>Player Statistics</ModalContentTitle>
+          <ModalContentTitle>2022-2023 Player Statistics</ModalContentTitle>
           <p>
             <PlayerPhoto src={playerData.photo} alt={playerData.name} />
             <br />
