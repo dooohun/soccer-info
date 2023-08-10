@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getSeason } from "../../stores/soccerSlice"
 
 import Box from '@mui/material/Box';
@@ -9,8 +9,9 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
 export default function Season() {
-  const [season, setSeason] = useState("")
+  const [season, setSeason] = useState(2022)
   const dispatch = useDispatch();
+  const darkMode = useSelector((state) => state.darkMode);
 
   function handleChange(event) {
     const selectedSeason = event.target.value;
@@ -21,12 +22,12 @@ export default function Season() {
   return (
     <Box>
       <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label" >Season</InputLabel>
+        <InputLabel id="demo-simple-select-label" sx={darkMode ? {color: 'white'} : { }}>Season</InputLabel>
         <Select
+          sx={darkMode ? { backgroundColor: '#1565c0', color: "white" } : { }}
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           label="Season"
-          defaultValue={2022}
           value={season}
           onChange={handleChange}
         >
