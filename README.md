@@ -4,7 +4,7 @@
 - 세계 5대 축구 리그(영국, 스페인, 이탈리아, 독일, 프랑스)의 정보 공유
 - 리그의 소속된 팀 순위, 개인 순위, 다음 경기, 최근 경기 예측 정보를 알 수 있음.
 - 리그의 소속된 팀 정보, 팀의 선수들, 팀의 2023-2024 시즌 경기 일정을 알 수 있음.
-- 5대 축구 리그에 대한 정보를 API로 불러옴 (참조: [API-SPORTS][api-sports])
+- 5대 축구 리그에 대한 정보를 API로 불러옴 (참조: [API-SPORTS DOC][api-sports])
 - 웹 페이지: [유럽 5대 리그][pro-five]
 
 ## 웹 사이트 화면
@@ -46,5 +46,5 @@ Redux Toolkit의 일부분으로, 데이터 가져오기와 관리를 단순화�
 특히 비동기 작업을 처리하기 위한 비동기 상태, 오류 핸들링, 로딩 상태 등을 자동으로 관리해준다는 장점이 있다.
 
 
-  [api-sports]: <https://api-sports.io/>
+  [api-sports]: <https://api-sports.io/documentation/football/v3>
   [pro-five]: <https://dooohun.github.io/soccer-info/>
