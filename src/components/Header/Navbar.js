@@ -1,9 +1,12 @@
 import { styled } from "styled-components"
 import { Link } from "react-router-dom"
 import { toggleDarkMode } from "../../stores/darkModeSlice";
-import Switch from '@mui/material/Switch';
 import { useDispatch, useSelector } from "react-redux";
 import { getTeamInfo } from "../../stores/soccerSlice";
+
+import IconButton from '@mui/material/IconButton';
+import Brightness4Icon from '@mui/icons-material/Brightness4';
+import Brightness7Icon from '@mui/icons-material/Brightness7';
 
 const MainHeader = styled.header`
   display: grid;
@@ -48,8 +51,8 @@ const MainTitle = styled.h2`
   font-size: 30px;
 `
 
-const ToggleSwitch = styled(Switch)`
-  margin-right: 25px;
+const ToggleSwitchBox = styled.div`
+  margin-right: 30px;
 `
 
 export default function Navbar() {
@@ -65,18 +68,19 @@ export default function Navbar() {
   }
 
   return (
-      <MainHeader>
-        <LogoBox>
-          <MainLogo to={process.env.PUBLIC_URL + "/"} onClick={mainLogoHandler}>ProFive</MainLogo>
-        </LogoBox>
-        <NavHeader>
-          <MainTitle>Welcome To ProFive</MainTitle>
-          <ToggleSwitch
-            aria-label="Switch demo"
-            checked={darkMode}
-            onClick={handleDarkModeToggle}
-          />
-        </NavHeader>
-      </MainHeader>
+    <MainHeader>
+      <LogoBox>
+        <MainLogo to={process.env.PUBLIC_URL + "/"} onClick={mainLogoHandler}>ProFive</MainLogo>
+      </LogoBox>
+      <NavHeader>
+        <MainTitle>Welcome To ProFive</MainTitle>
+        <ToggleSwitchBox>
+          {darkMode ? "Dark Mode" : "Light Mode"}
+          <IconButton sx={{ ml: 1 }} onClick={handleDarkModeToggle} color="inherit">
+            {darkMode ? <Brightness7Icon /> : <Brightness4Icon />}
+          </IconButton>
+        </ToggleSwitchBox>
+      </NavHeader>
+    </MainHeader>
   )
 }
