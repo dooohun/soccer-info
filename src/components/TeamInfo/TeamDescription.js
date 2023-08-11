@@ -40,7 +40,7 @@ const VenuePhoto = styled.div`
 export default function TeamDescription() {
   const selectedTeamId = useSelector((state) => state.soccerInfo.teamId);
 
-  const { data, isLoading } = useGetTeamInformationQuery(selectedTeamId);
+  const { data, isLoading, error } = useGetTeamInformationQuery(selectedTeamId);
 
   const teamData = data?.response[0]?.team;
   const venueData = data?.response[0]?.venue;
@@ -50,6 +50,9 @@ export default function TeamDescription() {
   }
   if (!teamData || !venueData) {
     return <div>No data available</div>;
+  }
+  if (error) {
+    return <div>Error occurred</div>;
   }
 
 

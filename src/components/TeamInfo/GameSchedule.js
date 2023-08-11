@@ -123,14 +123,21 @@ export default function GameSchedule() {
   const selectedTeamId = useSelector((state) => state.soccerInfo.teamId);
   const selectedPlayerId = useSelector((state) => state.soccerInfo.playerId);
 
-  const { data, isLoading } = useGetGameScheduleQuery({
+  const { data, isLoading, error } = useGetGameScheduleQuery({
     leagueId: `${selectedLeagueId}`,
     teamId: `${selectedTeamId}`,
   });
   
   if (isLoading) {
-    // 데이터 로딩 중일 때 처리 (로딩 스피너 등)
-    return <div>Loading...</div>;
+    return <div>Loading</div>;
+  }
+
+  if (error) {
+    return <div>Error occurred</div>;
+  }
+
+  if (!data) {
+    return <div>No data available</div>;
   }
 
   if (data && data.response && data.response.length > 0) {
