@@ -7,8 +7,6 @@ import { styled } from "styled-components";
 import ButtonGroup from '@mui/material/ButtonGroup';
 import Button from '@mui/material/Button';
 
-const INITIAL_FIXTURE_ID = 1035037;
-
 const RecentMatchesContainer = styled.div`
   width: 90%;
   background-color: ${props => props.theme.backgroundColor2};
@@ -87,6 +85,7 @@ const TeamLogoImage = styled.img`
 
 export default function NextMatches() {
   const selectedLeagueId = useSelector((state) => state.soccerInfo.leagueId);
+  const selectedFixtureId = useSelector((state) => state.soccerInfo.fixtureId);
   const darkMode = useSelector((state) => state.darkMode);
 
   const [matches, setMatches] = useState([]);
@@ -113,7 +112,7 @@ export default function NextMatches() {
       setCurrentPage((prevPage) => prevPage - 1)
     }
   }
-  const [selectedSectionId, setSelectedSectionId] = useState(INITIAL_FIXTURE_ID);
+  const [selectedSectionId, setSelectedSectionId] = useState(selectedFixtureId);
 
   function handleMainSection(id) {
     dispatch(getFixtureId({ fixtureId: id }));
