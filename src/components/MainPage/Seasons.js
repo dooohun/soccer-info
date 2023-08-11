@@ -19,12 +19,16 @@ export default function Season() {
     dispatch(getSeason({ season: selectedSeason }));
   }
 
+  const inputLabelStyles = {
+    color: darkMode ? '#FFFFFF' : 'inherit',
+  };
+
   return (
     <Box>
       <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label" sx={darkMode ? {color: '#FFFFFF'} : { }}>Season</InputLabel>
+        <InputLabel id="demo-simple-select-label" sx={inputLabelStyles}>Season</InputLabel>
         <Select
-          sx={darkMode ? { backgroundColor: '#1565c0', color: "#FFFFFF" } : {}}
+          sx={darkMode ? { backgroundColor: '#1565c0', color: "#FFFFFF" } : { }}
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           label="Season"

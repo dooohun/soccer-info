@@ -18,6 +18,7 @@ const ModalContainer = styled.div`
   position: fixed;
 
   background-color: ${props => props.theme.modalBackground};
+  z-index: 2;
 `
 
 const ModalContent = styled.div`
