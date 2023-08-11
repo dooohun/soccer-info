@@ -54,6 +54,7 @@ const ButtonBox = styled.div`
   justify-content: flex-end;
   position: sticky;
   top: 0;
+  z-index: 2;
 `
 
 const Table = styled.table`
