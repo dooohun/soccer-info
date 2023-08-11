@@ -22,8 +22,8 @@ const ModalContainer = styled.div`
 `
 
 const ModalContent = styled.div`
-  width: 800px;
-  height: 500px;
+  width: 900px;
+  height: 600px;
   background-color: ${props => props.theme.backgroundColor2};
   border-radius: 10px;
   padding: 10px 20px;
