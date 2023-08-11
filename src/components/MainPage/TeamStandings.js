@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom"; 
 import { getTeamInfo } from "../../stores/soccerSlice";
 
-import FormShape, { FormState } from "../../styles/FromShape";
+import FormStyle, { FormState } from "../../styles/FormStyle";
 import { styled } from "styled-components";
 
 import Season from "./Seasons";
@@ -128,7 +128,7 @@ export default function TeamStandings() {
                 <TableCell>{arr.goalsDiff}</TableCell>
                 <TableCell>
                   <FormState>
-                    <FormShape form={arr.form}/>
+                    <FormStyle form={arr.form}/>
                   </FormState>
                 </TableCell>
               </TableRow>

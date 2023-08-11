@@ -31,7 +31,7 @@ const GreenCircle = styled(Circle)`
   background-color: green;
 `;
 
-export default function FormShape({ form }) {
+export default function FormStyle({ form }) {
   const threeChar = form?.slice(0, 3);
   if (threeChar !== undefined) {
     return (

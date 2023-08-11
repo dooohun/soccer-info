@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-// 전역 상태 관리 => 리그 아이디, 팀 아이디, 시즌
+// 전역 상태 관리
 const leagues = {
   PremierLeague: 39,
   Ligue1: 61,
