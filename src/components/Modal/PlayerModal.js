@@ -119,7 +119,7 @@ export default function PlayerModal() {
 
   useEffect(() => {
     if (selectedPlayerId) {
-      setModal(!modal);
+      setModal(() => !modal);
     }
   }, [selectedPlayerId])
 

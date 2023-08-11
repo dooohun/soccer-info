@@ -120,7 +120,6 @@ const TeamLogoImage = styled.img`
 export default function GameSchedule() {
   const selectedLeagueId = useSelector((state) => state.soccerInfo.leagueId);
   const selectedTeamId = useSelector((state) => state.soccerInfo.teamId);
-  const selectedPlayerId = useSelector((state) => state.soccerInfo.playerId);
 
   const { data, isLoading, error } = useGetGameScheduleQuery({
     leagueId: `${selectedLeagueId}`,

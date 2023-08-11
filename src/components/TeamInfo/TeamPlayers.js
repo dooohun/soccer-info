@@ -66,7 +66,6 @@ const PlayerImage = styled.img`
 
 export default function TeamPlayers() {
   const selectedTeamId = useSelector((state) => state.soccerInfo.teamId);
-  const selectedPlayerId = useSelector((state) => state.soccerInfo.playerId);
   const { data, isLoading, error } = useGetSquadInformationQuery(selectedTeamId);
   const dispatch = useDispatch();
   

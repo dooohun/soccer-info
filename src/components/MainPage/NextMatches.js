@@ -7,6 +7,8 @@ import { styled } from "styled-components";
 import ButtonGroup from '@mui/material/ButtonGroup';
 import Button from '@mui/material/Button';
 
+const INITIAL_FIXTURE_ID = 1035037;
+
 const RecentMatchesContainer = styled.div`
   width: 90%;
   background-color: ${props => props.theme.backgroundColor2};
@@ -111,12 +113,11 @@ export default function NextMatches() {
       setCurrentPage((prevPage) => prevPage - 1)
     }
   }
-
-  const [selectedSectionIdx, setSelectedSectionIdx] = useState(1035037);
+  const [selectedSectionId, setSelectedSectionId] = useState(INITIAL_FIXTURE_ID);
 
   function handleMainSection(id) {
     dispatch(getFixtureId({ fixtureId: id }));
-    setSelectedSectionIdx(id);
+    setSelectedSectionId(id);
   }
 
   if (isLoading) {
@@ -151,7 +152,7 @@ export default function NextMatches() {
               onClick={() => handleMainSection(arr.fixture.id)}
               key={idx}
               id={arr.fixture.id}
-              $isselected={selectedSectionIdx === arr.fixture.id ? "true" : "false"}
+              $isselected={selectedSectionId === arr.fixture.id ? "true" : "false"}
             >
               {(arr.fixture.date).slice(0, 10)}
               <MainMatch>
