@@ -39,7 +39,7 @@ const MainSection = styled.div`
   align-items: center;
   justify-content: space-evenly;
   text-align: start;
-  width: 100%;
+  width: 340px;
   margin: 5px 15px;
   padding: 10px;
   border: solid 3px #EEEAF0;
@@ -53,7 +53,7 @@ const MainMatch = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: 340px;
 `
 
 const HomeTeam = styled.div`
