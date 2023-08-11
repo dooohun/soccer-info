@@ -41,8 +41,7 @@
 - React Router
 - Styled-Components
 - MUI
-- RTK Query: Redux Toolkit의 일부분으로, 데이터 가져오기와 관리를 단순화하고 최적화하는 데 도움을 주는 라이브러리이다. <br/>
-특히 비동기 작업을 처리하기 위한 비동기 상태, 오류 핸들링, 로딩 상태 등을 자동으로 관리해준다는 장점이 있다.
+- RTK Query: Redux Toolkit의 일부분으로, 데이터 가져오기와 관리를 단순화하고 최적화하는 데 도움을 주는 라이브러리이다. 특히 비동기 작업을 처리하기 위한 비동기 상태, 오류 핸들링, 로딩 상태 등을 자동으로 관리해준다는 장점이 있다.
 
 
   [api-sports]: <https://api-sports.io/documentation/football/v3>
