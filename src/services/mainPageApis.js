@@ -16,7 +16,7 @@ export const mainPageApis = createApi({
     }),
     getRecentMatches: builder.query({
       query: (leagueId) => {
-        return `fixtures?league=${leagueId}&season=2023&next=10`
+        return `fixtures?league=${leagueId}&season=2023&round=Regular Season - 1`
       }
     }),
     getPrediction: builder.query({
