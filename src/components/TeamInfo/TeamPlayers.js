@@ -36,7 +36,7 @@ const Table = styled.table`
 const TableHead = styled.thead`
   background-color: ${props => props.theme.headerBackground};
   font-weight: bold;
-  position: ${props => props.$sticky ? 'sticky' : 'static'};
+  position: sticky;
   top: 0;
   z-index: 1;
 `
@@ -93,7 +93,7 @@ export default function TeamPlayers() {
       <TeamPlayersContainer>
         <MainTitle>Players</MainTitle>
         <Table>
-          <TableHead $sticky={!selectedPlayerId}>
+          <TableHead>
             <TableRow>
               <TableHeadCell>Player</TableHeadCell>
               <TableHeadCell>Age</TableHeadCell>

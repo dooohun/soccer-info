@@ -67,7 +67,6 @@ const BackgroundBox = styled.div`
     top: 35%;
     border-radius: 50%;
     z-index: 1;
-    display: ${props => props.$selectedPlayerId !== null ? "none" : "block"};
   }
 `
 const GameScheduleItem = styled.div`
@@ -152,7 +151,7 @@ export default function GameSchedule() {
                   <DateText $isleft="true">
                     {(game.fixture.date).slice(0, 10)}
                   </DateText>
-                  <BackgroundBox $isleft="false" $selectedPlayerId={selectedPlayerId}>
+                  <BackgroundBox $isleft="false">
                     <GameScheduleItem>
                       <HomeTeam>
                         <TeamLogoImage alt={game.teams.home.name} src={game.teams.home.logo} />
@@ -169,7 +168,7 @@ export default function GameSchedule() {
             } else {
               return (
                 <Timeline key={idx}>
-                  <BackgroundBox $isleft="true" $selectedPlayerId={selectedPlayerId}>
+                  <BackgroundBox $isleft="true">
                     <GameScheduleItem>
                       <HomeTeam>
                         <TeamLogoImage alt={game.teams.home.name} src={game.teams.home.logo} />
