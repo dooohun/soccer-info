@@ -9,7 +9,8 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
 export default function Season() {
-  const [season, setSeason] = useState(2022)
+  const selectedSeason = useSelector((state) => state.soccerInfo.season);
+  const [season, setSeason] = useState(selectedSeason);
   const dispatch = useDispatch();
   const darkMode = useSelector((state) => state.darkMode);
 
