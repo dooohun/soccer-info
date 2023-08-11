@@ -77,7 +77,7 @@ export default function Navbar() {
         <ToggleSwitchBox>
           {darkMode ? "Dark Mode" : "Light Mode"}
           <IconButton sx={{ ml: 1 }} onClick={handleDarkModeToggle} color="inherit">
-            {darkMode ? <Brightness7Icon /> : <Brightness4Icon />}
+            {darkMode ? <Brightness4Icon /> :<Brightness7Icon />}
           </IconButton>
         </ToggleSwitchBox>
       </NavHeader>
